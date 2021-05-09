@@ -9,6 +9,10 @@
     --tertiary: rgb(55, 30, 30);
 }
 
+.hide {
+    display: none;
+}
+
 .scores {
     display: flex;
 }
@@ -16,6 +20,7 @@
 .timer {
     display: flex;
     position: fixed;
+    top: 40px;
 }
 
 .wrapper {

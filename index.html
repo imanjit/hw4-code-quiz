@@ -10,15 +10,25 @@
 </head>
 <body>
     <nav class="scores"><a href="./js/scores.js">View Highscores</a></nav>
-    <aside class="timer">Time: </aside> 
+    <aside class="timer">Time: <span id="timer">30</span></aside> 
 
     <main class="wrapper">
-        <h1>Coding Quiz Challenge</h1>
-        <p>
-            This quiz will give you 30 seconds to answer 5 coding-related questions.
-            Incorrect answers will result in a 6 second penalty. Good luck!
-        </p>
-        <button>Start</button>
+        <div id="start">
+            <h1>Coding Quiz Challenge</h1>
+            <p>
+                This quiz will give you 30 seconds to answer 5 coding-related questions.
+                Incorrect answers will result in a 6 second penalty. Good luck!
+            </p>
+            <button id="submit">Start</button>
+        </div>
+
+        <div id="questions" class="hide">
+            Questions
+        </div>
+
+        <div id="end" class="hide">
+            <h2>Done!</h2>
+        </div>
     </main>
 
     <script src="./js/script.js"></script>
