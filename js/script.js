@@ -102,3 +102,17 @@ function questionClick() {
         nextQuestion();
     }
 };
+
+function questionClick() {
+    if (this.value !== currentQuestion.answer) {
+        timeLeft -= 6;
+    }
+    timerEl.innerHTML = timeLeft;
+    currentQuestion++
+
+    if (currentQuestion === allQuestions.length) {
+        endQuiz();
+    } else {
+        nextQuestion();
+    }
+};
