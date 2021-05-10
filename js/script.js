@@ -56,34 +56,18 @@ beginBtn.onclick = function () {
     nextQuestion();
 };
 
-function timer() {
-    var clockTick = setInterval (function() {
-        timerEl.textContent = timeLeft;
-        timeLeft--;
-        if (timeLeft < 0) {
-            clearInterval(clockTick);
-            endQuiz();
-        }
-    }, 1000);
-}
-
-function endQuiz() {
-    endScreen.removeAttribute("class");
-    questionsScreen.setAttribute("class", "hide")
-};
-
 function nextQuestion() {
     questionTitle.innerHTML = currentQuestion.title;
-    questionChoices.innerHTML = [""];
-
+    questionChoices.innerHTML = ""; 
+    
     currentQuestion.choices.forEach(function(choice, i) {
         var options = document.createElement("button");
         options.setAttribute("class", "choice");
         options.setAttribute("value", choice);
-
+        
         options.innerHTML = i + 1 + choice;
     });
-
+    
     if (options.onclick) {
         questionClick();
     }
@@ -101,4 +85,20 @@ function questionClick() {
     } else {
         nextQuestion();
     }
+};
+
+function timer() {
+    var clockTick = setInterval (function() {
+        timerEl.textContent = timeLeft;
+        timeLeft--;
+        if (timeLeft < 0) {
+            clearInterval(clockTick);
+            endQuiz();
+        }
+    }, 1000);
+};
+
+function endQuiz() {
+    endScreen.removeAttribute("class");
+    questionsScreen.setAttribute("class", "hide")
 };
