@@ -1,16 +1,21 @@
 var timeLeft = 30;
 var questionsIndex = 0;
+var currentQuestion = questions[questionsIndex];
 
-var questionsEl = document.querySelector("#questions");
+var beginBtn = document.querySelector("#begin");
+var endScreen = document.querySelector("#end");
+var finalScore = document.querySelector("#score");
+var questionsScreen = document.querySelector("#questions");
+var questionChoices = document.querySelector("choices");
+var questionTitle = document.querySelector("#title");
 var startScreen = document.querySelector("#start");
 var submitBtn = document.querySelector("#submit");
 var timerEl = document.querySelector("#timer");
-var endScreen = document.querySelector("#end");
 
 
-submitBtn.onclick = function () {
+beginBtn.onclick = function () {
     startScreen.setAttribute("class", "hide");
-    questionsEl.removeAttribute("class");
+    questionsScreen.removeAttribute("class");
     
     timer();
 };
@@ -28,5 +33,5 @@ function timer() {
 
 function endQuiz() {
     endScreen.removeAttribute("class");
-    questionsEl.setAttribute("class", "hide")
+    questionsScreen.setAttribute("class", "hide")
 };

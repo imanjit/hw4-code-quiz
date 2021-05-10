@@ -19,15 +19,19 @@
                 This quiz will give you 30 seconds to answer 5 coding-related questions.
                 Incorrect answers will result in a 6 second penalty. Good luck!
             </p>
-            <button id="submit">Start</button>
+            <button id="begin">Begin</button>
         </div>
 
         <div id="questions" class="hide">
-            Questions
+            <h2 id="title"></h2>
+            <div id="choices"></div>
         </div>
 
         <div id="end" class="hide">
             <h2>Done!</h2>
+            <p>Your final score is <span id="score"></span></p>
+            <input type="text" max="3" placeholder="Initials">
+            <button id="submit">Submit</button>
         </div>
     </main>
 
