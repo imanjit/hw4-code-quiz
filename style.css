@@ -9,10 +9,6 @@
     --tertiary: rgb(55, 30, 30);
 }
 
-.choice button {
-    display: block;
-}
-
 .done {
     margin: 45px;
 }

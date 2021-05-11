@@ -41,7 +41,7 @@ var beginBtn = document.querySelector("#begin");
 var endScreen = document.querySelector("#end");
 var finalScore = document.querySelector("#score");
 var questionsScreen = document.querySelector("#questions");
-var questionChoices = document.querySelector("choices");
+var questionChoices = document.querySelector("#choices");
 var questionTitle = document.querySelector("#title");
 var startScreen = document.querySelector("#start");
 var submitBtn = document.querySelector("#submit");
@@ -62,15 +62,15 @@ function nextQuestion() {
     
     currentQuestion.choices.forEach(function(choice, i) {
         var options = document.createElement("button");
-        options.setAttribute("class", "choice");
         options.setAttribute("value", choice);
-        
+
         options.innerHTML = i + 1 + choice;
-    });
-    
-    if (options.onclick) {
-        questionClick();
-    }
+
+        options.onclick = questionClick;
+
+        questionChoices.appendChild(options);
+
+})
 };
 
 function questionClick() {
@@ -78,9 +78,10 @@ function questionClick() {
         timeLeft -= 6;
     }
     timerEl.innerHTML = timeLeft;
-    currentQuestion++
 
-    if (currentQuestion === allQuestions.length) {
+    questionsIndex++;
+
+    if (questionsIndex === allQuestions.length) {
         endQuiz();
     } else {
         nextQuestion();
@@ -100,5 +101,5 @@ function timer() {
 
 function endQuiz() {
     endScreen.removeAttribute("class");
-    questionsScreen.setAttribute("class", "hide")
+    questionsScreen.setAttribute("class", "hide");
 };
